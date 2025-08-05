@@ -1,19 +1,28 @@
 workflows:
   ionic-capacitor-ios-workflow:
-    name: iOS Workflow to BrowserStack
+    name: iOS Workflow to Apple Store Connect and BrowserStack
     max_build_duration: 120
     instance_type: mac_mini_m2
     integrations:
       app_store_connect: "iOS key"
     environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.toto5931.app
       vars:
         # Ionic Xcode worskspace and scheme
         XCODE_WORKSPACE: "App.xcworkspace"
         XCODE_SCHEME: "App"
+        APP_STORE_APP_ID: 6749594480 # <-- Put the app id number here. This is found in App Store Connect > App > General > App Information
       xcode: latest # <-- set to specific version e.g. 14.3, 15.0 to avoid unexpected updates.
       cocoapods: default
       groups:
         - browserstack_credentials
+    signing:
+      xcode:
+        distribution_type: app_store
+        bundle_identifier: "com.toto5931.app"
+        automatic_signing: true
     scripts:
       - name: Install npm dependencies for Ionic project
         script: |
@@ -27,6 +36,11 @@ workflows:
         script: |
           # npx cap copy # <- use this is you don't need to update native dependencies
           npx cap sync # <- update native dependencies and copy web assets to native project
+      - name: Increment build number
+        script: |
+          cd $CM_BUILD_DIR/ios/App
+          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-testflight-build-number "$APP_STORE_APP_ID")
+          agvtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
       - name: Build ipa for distribution
         script: |
           cd $CM_BUILD_DIR/ios/App
