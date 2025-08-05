@@ -18,11 +18,6 @@ workflows:
       cocoapods: default
       groups:
         - browserstack_credentials
-    signing:
-      xcode:
-        distribution_type: app_store
-        bundle_identifier: "com.toto5931.app"
-        automatic_signing: true
     scripts:
       - name: Install npm dependencies for Ionic project
         script: |
@@ -36,6 +31,9 @@ workflows:
         script: |
           # npx cap copy # <- use this is you don't need to update native dependencies
           npx cap sync # <- update native dependencies and copy web assets to native project
+      - name: Set up code signing settings on Xcode project
+        script: |
+          xcode-project use-profiles
       - name: Increment build number
         script: |
           cd $CM_BUILD_DIR/ios/App
