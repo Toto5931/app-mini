@@ -5,7 +5,7 @@
   "backgroundColor": "#1a1a1a",
   "android": {},
   "ios": {
-    "contentInset": "always"
+    "contentInset": "automatic"
   },
   "plugins": {
     "CapacitorCookies": {
@@ -23,9 +23,6 @@
       "resize": "body",
       "style": "DARK",
       "resizeOnFullScreen": false
-    },
-    "EdgeToEdge": {
-      "backgroundColor": "#000000"
     }
   }
 }
