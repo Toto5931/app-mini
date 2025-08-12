@@ -2,7 +2,6 @@
   "appId": "com.toto5931.app",
   "appName": "Test_toto5931",
   "webDir": "dist",
-  "backgroundColor": "#1a1a1a",
   "android": {},
   "ios": {},
   "plugins": {}
