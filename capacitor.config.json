@@ -5,7 +5,7 @@
   "backgroundColor": "#1a1a1a",
   "android": {},
   "ios": {
-    "contentInset": "automatic"
+    "contentInset": "always"
   },
   "plugins": {
     "CapacitorCookies": {
