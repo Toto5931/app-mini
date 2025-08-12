@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import { SafeArea } from '@capacitor-community/safe-area';
+
 
 function App() {
 
