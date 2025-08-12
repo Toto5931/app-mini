@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import './App.css';
+import { SafeArea } from '@capacitor-community/safe-area';
 
 function App() {
+
   return (
-    <div>
+    <div id="myApp">
     <h1>Hello Capacitor + React + Vite</h1>
 
     <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab deserunt quam earum, beatae dolorem amet. Porro quam quas, hic iure est officia, laborum ipsa perferendis laudantium aut perspiciatis velit atque.   </div>                                                          
