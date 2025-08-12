@@ -22,7 +22,7 @@
     "Keyboard": {
       "resize": "body",
       "style": "DARK",
-      "resizeOnFullScreen": false
+      "resizeOnFullScreen": true
     }
   }
 }
