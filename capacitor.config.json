@@ -4,25 +4,6 @@
   "webDir": "dist",
   "backgroundColor": "#1a1a1a",
   "android": {},
-  "ios": {
-    "contentInset": "always"
-  },
-  "plugins": {
-    "CapacitorCookies": {
-      "enabled": true
-    },
-    "CapacitorHttp": {
-      "enabled": true
-    },
-    "SplashScreen": {
-      "launchShowDuration": 3000,
-      "backgroundColor": "#1a1a1a",
-      "androidScaleType": "CENTER_CROP"
-    },
-    "Keyboard": {
-      "resize": "body",
-      "style": "DARK",
-      "resizeOnFullScreen": true
-    }
-  }
+  "ios": {},
+  "plugins": {}
 }
