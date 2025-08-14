@@ -1,7 +1,14 @@
 html{
     padding-left:  var(--safe-area-inset-left);
     padding-right:  var(--safe-area-inset-right);
-    padding-top:  var(--safe-area-inset-top);
     padding-bottom:  var(--safe-area-inset-bottom);
     background-color: rgb(57, 163, 15);
+}
+
+.header {
+  height: var(--safe-area-inset-top);
+  background-color: rgb(57, 163, 15);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
